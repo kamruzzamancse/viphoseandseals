@@ -1,0 +1,1001 @@
+/**
+ * Hose Builder - Custom Cart Styles
+ * Version: 10.0 - Cleaned up, no duplicates
+ */
+
+/* ============================================ */
+/* Global Styles */
+/* ============================================ */
+
+.wp-block-woocommerce-cart {
+    container-type: inline-size;
+    width: auto !important;
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* ============================================ */
+/* Cart Header Section */
+/* ============================================ */
+
+.hb-cart-header-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hb-cart-main-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #1a2c3e;
+    margin: 0 0 8px 0;
+}
+
+.hb-cart-subtitle {
+    font-size: 16px;
+    color: #6b7280;
+    margin: 0;
+}
+
+/* ============================================ */
+/* Cart Container */
+/* ============================================ */
+
+.wc-block-cart {
+    background: #ffffff;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+    border: 1px solid #e5e7eb;
+}
+
+/* ============================================ */
+/* Cart Items Row */
+/* ============================================ */
+
+.wc-block-cart-items__row {
+    padding: 28px 24px;
+    border-bottom: 1px solid #e5e7eb;
+    display: table-row !important;
+}
+
+/* ============================================ */
+/* Product Image */
+/* ============================================ */
+
+.wc-block-cart-item__image {
+    padding: 0 20px 0 0 !important;
+    vertical-align: top;
+}
+
+.wc-block-cart-item__image img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border: 1px solid #e5e7eb;
+}
+
+/* ============================================ */
+/* Product Cell */
+/* ============================================ */
+
+.wc-block-cart-item__product {
+    padding: 0 20px !important;
+    vertical-align: top;
+}
+
+.wc-block-cart-item__wrap {
+    width: 100%;
+}
+
+/* Product Name */
+.wc-block-components-product-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a2c3e;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.wc-block-components-product-name:hover {
+    color: #3b82f6;
+}
+
+/* ============================================ */
+/* Price Display */
+/* ============================================ */
+
+.wc-block-cart-item__prices {
+    margin-bottom: 6px;
+}
+
+.wc-block-components-product-price {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.wc-block-components-product-price__regular {
+    color: #9ca3af;
+    font-size: 14px;
+    text-decoration: line-through;
+}
+
+.wc-block-components-product-price__value {
+    font-size: 22px;
+    font-weight: 700;
+    color: #3b82f6;
+}
+
+/* Sale Badge */
+.wc-block-components-sale-badge,
+.hb-sale-badge {
+    display: inline-block;
+    background: #10b981;
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    margin: 6px 0;
+    border: none;
+}
+
+/* ============================================ */
+/* Product Specs - Inline Style */
+/* ============================================ */
+
+.hb-product-specs {
+    margin: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 13px;
+    color: #4b5563;
+}
+
+.hb-spec-item {
+    background: #f9fafb;
+    padding: 4px 10px;
+    border: 1px solid #e5e7eb;
+}
+
+.hb-spec-item strong {
+    color: #374151;
+    font-weight: 600;
+}
+
+/* ============================================ */
+/* Assembly Specs - Only on Main Product */
+/* ============================================ */
+
+.hb-assembly-specs-wrapper {
+    margin-top: 20px;
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    padding: 16px 20px;
+}
+
+.hb-assembly-header {
+    font-size: 14px;
+    font-weight: 700;
+    color: #3b82f6;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hb-assembly-header::before {
+    content: "🔧";
+}
+
+.hb-assembly-item {
+    font-size: 13px;
+    color: #374151;
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hb-assembly-item strong {
+    font-weight: 600;
+    color: #1f2937;
+    min-width: 160px;
+    display: inline-block;
+}
+
+/* ============================================ */
+/* Action Buttons */
+/* ============================================ */
+
+.hb-action-buttons {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    gap: 12px;
+}
+
+.hb-update-btn {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.hb-update-btn:hover {
+    background: #2563eb;
+}
+
+.hb-delete-btn {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.hb-delete-btn:hover {
+    background: #dc2626;
+}
+
+/* ============================================ */
+/* Component Badge */
+/* ============================================ */
+
+.hb-component-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 12px;
+    margin-top: 12px;
+    border: 1px solid #e5e7eb;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: #f3f4f6;
+    color: #4b5563;
+}
+
+.hb-left-end-badge {
+    background: #eef2ff;
+    color: #3b82f6;
+    border-color: #c7d2fe;
+}
+
+.hb-right-end-badge {
+    background: #ecfdf5;
+    color: #10b981;
+    border-color: #a7f3d0;
+}
+
+/* ============================================ */
+/* Assembly Group Items Styling */
+/* ============================================ */
+
+.wc-block-cart-items__row[data-hb-group] {
+    position: relative;
+    border-left: 3px solid #3b82f6;
+    padding-left: 20px !important;
+}
+
+.wc-block-cart-items__row[data-hb-group]::before {
+    content: "📦 Assembly Item";
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background: #3b82f6;
+    color: white;
+    font-size: 10px;
+    padding: 2px 8px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* ============================================ */
+/* Quantity Selector - Hidden */
+/* ============================================ */
+
+.wc-block-components-quantity-selector {
+    display: none !important;
+}
+
+.wc-block-components-quantity-selector__button {
+    display: none !important;
+}
+
+.wc-block-cart-items__row .wc-block-cart-item__quantity {
+    display: none !important;
+}
+
+/* ============================================ */
+/* Remove Button */
+/* ============================================ */
+
+.wc-block-cart-item__remove-link {
+    background: #fef2f2;
+    color: #ef4444 !important;
+    padding: 7px 16px;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: 1px solid #fee2e2;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 0 !important;
+}
+
+.wc-block-cart-item__remove-link:hover {
+    background: #ef4444;
+    color: #ffffff !important;
+    border-color: #ef4444;
+}
+
+/* ============================================ */
+/* Total Column */
+/* ============================================ */
+
+.wc-block-cart-item__total {
+    padding: 0 0 0 20px !important;
+    vertical-align: top;
+    text-align: right;
+}
+
+.wc-block-cart-item__total .wc-block-components-product-price__value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #3b82f6;
+}
+
+/* ============================================ */
+/* Cart Totals Section */
+/* ============================================ */
+
+.wc-block-cart__sidebar {
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    padding: 24px;
+    border: 1px solid #e5e7eb;
+    border-top: none;
+}
+
+.wc-block-cart__totals-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a2c3e;
+    margin: 0 0 20px 0;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* ============================================ */
+/* Coupon Form */
+/* ============================================ */
+
+.wc-block-components-totals-coupon {
+    margin-bottom: 20px;
+}
+
+.wc-block-components-panel__button {
+    background: none;
+    border: none;
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #3b82f6;
+    cursor: pointer;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px;
+    width: auto !important;
+    line-height: 1;
+}
+
+.wc-block-components-panel__button-icon {
+    width: 18px;
+    height: 18px;
+    fill: #3b82f6;
+    display: inline-block;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+    top: 0 !important;
+}
+
+.wc-block-components-panel__button svg {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.wc-block-components-panel.is-open .wc-block-components-panel__button-icon {
+    transform: rotate(180deg);
+}
+
+.wc-block-components-panel__content {
+    padding: 12px 0;
+    display: none;
+}
+
+.wc-block-components-panel.is-open .wc-block-components-panel__content {
+    display: block;
+}
+
+.wc-block-components-totals-coupon__form {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.wc-block-components-text-input {
+    flex: 1;
+    position: relative;
+}
+
+.wc-block-components-text-input input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #e5e7eb;
+    font-size: 14px;
+    background: #ffffff;
+    box-sizing: border-box;
+}
+
+.wc-block-components-text-input input:focus {
+    outline: none;
+    border-color: #3b82f6;
+}
+
+.wc-block-components-text-input label {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    padding: 0 4px;
+    font-size: 14px;
+    color: #9ca3af;
+    transition: all 0.2s ease;
+    pointer-events: none;
+}
+
+.wc-block-components-text-input input:focus + label,
+.wc-block-components-text-input input:not(:placeholder-shown) + label {
+    top: 0;
+    font-size: 11px;
+    color: #3b82f6;
+}
+
+.wc-block-components-totals-coupon__button {
+    padding: 12px 20px;
+    background: #1f2937;
+    color: #ffffff;
+    border: 1px solid #1f2937;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.wc-block-components-totals-coupon__button:hover {
+    background: #111827;
+}
+
+.wc-block-components-totals-coupon__button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ============================================ */
+/* Totals Footer Item */
+/* ============================================ */
+
+.wc-block-components-totals-wrapper {
+    margin-top: 20px;
+}
+
+.wc-block-components-totals-footer-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 16px 0 8px 0;
+    border-top: 1px solid #e5e7eb;
+}
+
+.wc-block-components-totals-footer-item__label {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.wc-block-components-totals-footer-item .wc-block-components-totals-item__value {
+    font-size: 22px;
+    color: #3b82f6;
+    font-weight: 700;
+}
+
+/* ============================================ */
+/* Checkout Button */
+/* ============================================ */
+
+.wc-block-cart__submit-container {
+    margin-top: 24px;
+}
+
+.wc-block-cart__submit-button {
+    display: block;
+    width: 100%;
+    padding: 14px 20px;
+    background: #000000;
+    color: #ffffff;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid #000000;
+    cursor: pointer;
+}
+
+.wc-block-cart__submit-button:hover {
+    background: #1f2937;
+    border-color: #1f2937;
+}
+
+/* ============================================ */
+/* Button Styles */
+/* ============================================ */
+
+body:not(.woocommerce-block-theme-has-button-styles) .wc-block-components-button:not(.is-link) {
+    color: #FFFFFF !important;
+    text-decoration: none !important;
+}
+
+body:not(.woocommerce-block-theme-has-button-styles) .wc-block-components-button:not(.is-link):hover {
+    color: #FFFFFF !important;
+    text-decoration: underline !important;
+}
+
+/* ============================================ */
+/* Responsive Design */
+/* ============================================ */
+
+@media (max-width: 1024px) {
+    .wp-block-woocommerce-cart {
+        padding: 0 16px;
+    }
+    
+    .wc-block-cart-items__row {
+        padding: 20px 16px;
+    }
+    
+    .wc-block-cart-item__image img {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 768px) {
+    .wp-block-woocommerce-cart {
+        padding: 0 12px;
+        margin: 20px auto;
+    }
+    
+    .hb-cart-main-title {
+        font-size: 28px;
+    }
+    
+    .hb-cart-subtitle {
+        font-size: 14px;
+    }
+    
+    .wc-block-cart-items {
+        display: block;
+    }
+    
+    .wc-block-cart-items thead {
+        display: none;
+    }
+    
+    .wc-block-cart-items tbody,
+    .wc-block-cart-items tr {
+        display: block;
+    }
+    
+    .wc-block-cart-items__row {
+        display: block !important;
+        padding: 20px;
+    }
+    
+    .wc-block-cart-item__image,
+    .wc-block-cart-item__product,
+    .wc-block-cart-item__total {
+        display: block !important;
+        padding: 0 !important;
+        text-align: left !important;
+        width: 100%;
+    }
+    
+    .wc-block-cart-item__image {
+        margin-bottom: 16px;
+        text-align: center;
+    }
+    
+    .wc-block-cart-item__image img {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto;
+    }
+    
+    .wc-block-cart-item__total {
+        margin-top: 18px;
+        text-align: left !important;
+    }
+    
+    .hb-assembly-specs-wrapper {
+        flex-direction: column;
+        gap: 8px;
+        padding: 12px;
+    }
+    
+    .hb-assembly-item {
+        flex-direction: column;
+        gap: 4px;
+    }
+    
+    .hb-assembly-item strong {
+        min-width: auto;
+        display: block;
+        margin-bottom: 2px;
+    }
+    
+    .hb-action-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .hb-update-btn,
+    .hb-delete-btn {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .hb-product-specs {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .wc-block-components-product-details li {
+        flex-direction: column;
+        padding: 10px 14px;
+    }
+    
+    .wc-block-components-product-details__name {
+        min-width: auto;
+        width: auto;
+        margin-bottom: 4px;
+        font-size: 11px;
+    }
+    
+    .wc-block-components-product-details__value {
+        font-size: 13px;
+    }
+    
+    .wc-block-components-totals-coupon__form {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .wc-block-components-text-input {
+        width: 100%;
+    }
+    
+    .wc-block-components-text-input input {
+        width: 100%;
+    }
+    
+    .wc-block-components-totals-coupon__button {
+        width: 100%;
+    }
+    
+    .wc-block-cart__sidebar {
+        padding: 20px;
+        margin-top: 20px;
+    }
+    
+    .wc-block-cart__totals-title {
+        font-size: 16px;
+    }
+    
+    .wc-block-components-totals-footer-item .wc-block-components-totals-item__value {
+        font-size: 20px;
+    }
+    
+    .wc-block-cart__submit-button {
+        padding: 12px 16px;
+        font-size: 15px;
+    }
+    
+    .wc-block-cart-items__row[data-hb-group] {
+        padding-left: 12px !important;
+    }
+    
+    .wc-block-cart-items__row[data-hb-group]::before {
+        font-size: 9px;
+        padding: 1px 6px;
+        top: -8px;
+        left: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wp-block-woocommerce-cart {
+        padding: 0 10px;
+    }
+    
+    .wc-block-cart-items__row {
+        padding: 16px;
+    }
+    
+    .hb-cart-main-title {
+        font-size: 24px;
+    }
+    
+    .wc-block-cart-item__image img {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .wc-block-components-product-name {
+        font-size: 16px;
+    }
+    
+    .wc-block-components-product-price__value {
+        font-size: 20px;
+    }
+    
+    .wc-block-cart-item__remove-link {
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+    
+    .wc-block-cart__sidebar {
+        padding: 16px;
+    }
+    
+    .wc-block-components-totals-footer-item .wc-block-components-totals-item__value {
+        font-size: 18px;
+    }
+    
+    .wc-block-cart__submit-button {
+        padding: 11px 14px;
+        font-size: 14px;
+    }
+}
+
+/* ============================================ */
+/* Fix for collapsed coupon panel */
+/* ============================================ */
+
+.wc-block-components-panel.is-open .wc-block-components-panel__content {
+    display: block;
+}
+
+.wc-block-components-panel:not(.is-open) .wc-block-components-panel__content {
+    display: none;
+}
+
+/* ============================================ */
+/* Remove all border-radius */
+/* ============================================ */
+
+.wc-block-cart,
+.wc-block-cart-item__image img,
+.wc-block-components-quantity-selector,
+.wc-block-cart-item__remove-link,
+.wc-block-components-text-input input,
+.wc-block-components-totals-coupon__button,
+.wc-block-cart__submit-button,
+.wc-block-components-product-metadata__description,
+.wc-block-components-product-details,
+.hb-component-badge,
+.hb-assembly-specs-wrapper,
+.hb-product-specs .hb-spec-item,
+.hb-sale-badge {
+    border-radius: 0 !important;
+}
+
+.elementor-menu-cart__main {
+    width: 550px !important;
+}
+
+/* ============================================ */
+/* Side Cart / Drawer Styling */
+/* ============================================ */
+
+/* Side Cart Container */
+.elementor-menu-cart__container {
+    background: rgba(0, 0, 0, 0.5) !important;
+}
+
+.elementor-menu-cart__main {
+    width: 450px !important;
+    max-width: 90vw;
+    background: #ffffff !important;
+    border-left: 1px solid #e5e7eb !important;
+}
+
+/* Side Cart Header */
+.elementor-menu-cart__header {
+    padding: 20px !important;
+    border-bottom: 1px solid #e5e7eb !important;
+}
+
+.elementor-menu-cart__title {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    color: #1a2c3e !important;
+}
+
+/* Side Cart Items */
+.elementor-menu-cart__product {
+    padding: 15px 20px !important;
+    border-bottom: 1px solid #f3f4f6 !important;
+}
+
+.elementor-menu-cart__product-name {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: #1f2937 !important;
+}
+
+.elementor-menu-cart__product-price {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: #3b82f6 !important;
+}
+
+/* Side Cart Subtotal */
+.elementor-menu-cart__subtotal {
+    padding: 15px 20px !important;
+    border-top: 1px solid #e5e7eb !important;
+}
+
+.elementor-menu-cart__subtotal .elementor-menu-cart__label {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #1f2937 !important;
+}
+
+.elementor-menu-cart__subtotal .elementor-menu-cart__value {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    color: #3b82f6 !important;
+}
+
+/* Side Cart Buttons */
+.elementor-menu-cart__footer-buttons {
+    padding: 20px !important;
+    display: flex;
+    gap: 12px !important;
+}
+
+.elementor-menu-cart__footer-buttons .elementor-button {
+    padding: 12px 20px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    border-radius: 0 !important;
+}
+
+.elementor-menu-cart__footer-buttons .elementor-button--view-cart {
+    background: #1f2937 !important;
+    color: white !important;
+}
+
+.elementor-menu-cart__footer-buttons .elementor-button--checkout {
+    background: #000000 !important;
+    color: white !important;
+}
+
+.elementor-menu-cart__footer-buttons .elementor-button:hover {
+    opacity: 0.9 !important;
+}
+
+/* Remove Button in Side Cart */
+.elementor-menu-cart__product-remove {
+    color: #ef4444 !important;
+}
+
+.elementor-menu-cart__product-remove:hover {
+    color: #dc2626 !important;
+}
+
+
+/* ============================================ */
+/* Header Buttons - Below Shopping Cart Header */
+/* ============================================ */
+
+.hb-header-buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    margin: 20px 0 30px 0;
+    padding: 0;
+}
+
+.hb-update-btn,
+.hb-delete-btn {
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.hb-update-btn {
+    background: #3b82f6;
+    color: white;
+}
+
+.hb-update-btn:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+.hb-delete-btn {
+    background: #ef4444;
+    color: white;
+}
+
+.hb-delete-btn:hover {
+    background: #dc2626;
+    transform: translateY(-2px);
+}
+
+/* ============================================ */
+/* Responsive for Mobile */
+/* ============================================ */
+
+@media (max-width: 768px) {
+    .hb-header-buttons {
+        justify-content: center;
+        gap: 12px;
+        margin: 15px 0 25px 0;
+    }
+    
+    .hb-update-btn,
+    .hb-delete-btn {
+        padding: 8px 18px;
+        font-size: 13px;
+        width: auto;
+        min-width: 140px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hb-header-buttons {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+    
+    .hb-update-btn,
+    .hb-delete-btn {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+}

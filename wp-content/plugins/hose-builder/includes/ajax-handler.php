@@ -80,7 +80,7 @@ function get_products_by_category_callback() {
     wp_die();
 }
 
-// Get Category Hierarchy (for Carbon Steel)
+// Get Category Hierarchy (for Carbon Steel) - WITH CORRECT LOGIC
 add_action('wp_ajax_get_category_hierarchy', 'get_category_hierarchy_callback');
 add_action('wp_ajax_nopriv_get_category_hierarchy', 'get_category_hierarchy_callback');
 
@@ -89,69 +89,54 @@ function get_category_hierarchy_callback() {
     $level = intval($_POST['level']);
     
     if ($parent_id) {
-        // First, check if this category has child categories
+        // Get child categories (sub-categories)
         $child_categories = get_terms(array(
             'taxonomy' => 'product_cat',
             'parent' => $parent_id,
             'hide_empty' => false,
         ));
         
-        // Check if this category has products
-        $has_products = false;
+        // Get products directly under this category (NOT under sub-categories)
         $products_args = array(
             'post_type' => 'product',
-            'posts_per_page' => 1,
-            'fields' => 'ids',
+            'posts_per_page' => -1,
+            'orderby' => 'title',
+            'order' => 'ASC',
             'tax_query' => array(
                 array(
                     'taxonomy' => 'product_cat',
                     'field' => 'term_id',
                     'terms' => $parent_id,
+                    'include_children' => false  // IMPORTANT: Only get products directly under this category
                 ),
             ),
         );
-        $products_query = new WP_Query($products_args);
-        if ($products_query->have_posts()) {
-            $has_products = true;
-        }
-        wp_reset_postdata();
+        $products = new WP_Query($products_args);
         
-        // If there are child categories, show them
+        // Start output
+        echo '<option value="">Select Option</option>';
+        
+        // CASE 1: Show sub-categories if they exist
         if (!empty($child_categories)) {
-            echo '<option value="">Departments / Products</option>';
             foreach ($child_categories as $category) {
-                echo '<option value="' . $category->term_id . '">' . $category->name . '</option>';
-            }
-        } 
-        // If no child categories but has products, show products
-        elseif ($has_products) {
-            echo '<option value="">Departments / Products</option>';
-            $products_args_full = array(
-                'post_type' => 'product',
-                'posts_per_page' => -1,
-                'orderby' => 'title',
-                'order' => 'ASC',
-                'tax_query' => array(
-                    array(
-                        'taxonomy' => 'product_cat',
-                        'field' => 'term_id',
-                        'terms' => $parent_id,
-                    ),
-                ),
-            );
-            $products_full = new WP_Query($products_args_full);
-            if ($products_full->have_posts()) {
-                while ($products_full->have_posts()) {
-                    $products_full->the_post();
-                    $product_id = get_the_ID();
-                    $product_title = get_the_title();
-                    echo '<option value="product_' . $product_id . '">' . $product_title . '</option>';
-                }
-                wp_reset_postdata();
+                echo '<option value="cat_' . $category->term_id . '">📁 ' . $category->name . '</option>';
             }
         }
-        // If no child categories and no products
-        else {
+        
+        // CASE 2: Show products ONLY if there are no sub-categories
+        // (Products that belong directly to this category, not to sub-categories)
+        if (empty($child_categories) && $products->have_posts()) {
+            while ($products->have_posts()) {
+                $products->the_post();
+                $product_id = get_the_ID();
+                $product_title = get_the_title();
+                echo '<option value="product_' . $product_id . '">📦 ' . $product_title . '</option>';
+            }
+            wp_reset_postdata();
+        }
+        
+        // CASE 3: If nothing found
+        if (empty($child_categories) && !$products->have_posts()) {
             echo '<option value="">No options available</option>';
         }
     }

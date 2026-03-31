@@ -15,16 +15,25 @@ define('HB_URL', plugin_dir_url(__FILE__));
 // Include files
 require_once HB_PATH . 'includes/form-handler.php';
 require_once HB_PATH . 'includes/display.php';
-require_once HB_PATH . 'includes/ajax-handler.php'; // Add this line
+require_once HB_PATH . 'includes/ajax-handler.php';
+require_once HB_PATH . 'includes/cart-display.php';
 
 // Enqueue assets
-add_action('wp_enqueue_scripts', function() {
-    wp_enqueue_style('hb-style', HB_URL . 'assets/css/style.css');
-    wp_enqueue_script('hb-script', HB_URL . 'assets/js/script.js', ['jquery'], null, true);
+add_action('wp_enqueue_scripts', 'hb_enqueue_scripts');
+function hb_enqueue_scripts() {
+    // Main styles
+    wp_enqueue_style('hb-style', HB_URL . 'assets/css/style.css', array(), '1.0');
+    
+    if (is_cart()) {
+        wp_enqueue_style('hb-custom-cart-style', HB_URL . 'assets/css/custom-cart.css', array(), '1.0');
+    }
+    
+    // Scripts
+    wp_enqueue_script('hb-script', HB_URL . 'assets/js/script.js', ['jquery', 'jquery-ui-slider'], null, true);
     wp_localize_script('hb-script', 'hb_ajax', array(
         'ajax_url' => admin_url('admin-ajax.php')
     ));
-});
+}
 
 // Shortcode
 add_shortcode('hose_builder', function() {
