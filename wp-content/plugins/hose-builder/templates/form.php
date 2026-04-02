@@ -115,7 +115,7 @@
                     <div class="option-card">
                         <label class="option-label">Your Part Number:</label>
                         <input type="text" name="part_number" id="part_number" class="hb-input" placeholder="Enter part number">
-                        <a href="#" class="more-info-link">(More Info)</a>
+                        <a href="#" class="more-info-link" data-modal="modal-part-number">(More Info)</a>
                     </div>
                     
                     <!-- BOM Section -->
@@ -123,6 +123,7 @@
                         <label class="checkbox-label">
                             <input type="checkbox" name="set_bom" id="set_bom" value="yes">
                             <span>Set BOM (Set Info)</span>
+                            <a href="#" class="more-info-link" data-modal="modal-set-bom">(More Info)</a>
                         </label>
                     </div>
                 </div>
@@ -132,7 +133,7 @@
                     <label class="option-label">Instructions/Comments:</label>
                     <textarea name="instructions" id="instructions" rows="3" class="hb-textarea" placeholder="Use the box below to enter any instructions or comments that need to be followed for the construction of this hose assembly"></textarea>
                     <div class="info-link">
-                        <a href="#">(Hose End Orientation)</a>
+                        <a href="#" class="more-info-link" data-modal="modal-hose-orientation">(Hose End Orientation)</a>
                     </div>
                 </div>
                 
@@ -160,7 +161,7 @@
                                 <input type="checkbox" name="use_feet" id="use_feet" value="feet">
                                 <span>Use feet</span>
                             </label>
-                            <a href="#" class="more-info-link">(More Info)</a>
+                            <a href="#" class="more-info-link" data-modal="modal-length-info">(More Info)</a>
                         </div>
                     </div>
                 </div>
@@ -186,6 +187,270 @@
     </form>
 </div>
 
+<!-- ============================================ -->
+<!-- MODAL FOR PART NUMBER INFO -->
+<!-- ============================================ -->
+<div id="modal-part-number" class="hb-modal">
+    <div class="hb-modal-content">
+        <div class="hb-modal-header">
+            <h3>ℹ️ Part Number Information</h3>
+            <span class="hb-modal-close">&times;</span>
+        </div>
+        <div class="hb-modal-body">
+            <p><strong>Part Number</strong></p>
+            <p>Everything has a part number. All our stuff has a unique number. Your equipment parts have numbers. You may have your own part number for an item.</p>
+            <p>We understand that. If you're more attached to your part number than ours, give us that part number and we'll process the parts with the number you prefer to identify the part by.</p>
+            <p>That way you can order using your favorite number and we'll ship it identified with that number on all the paperwork.</p>
+            <p><strong>Thanks for Your Business!</strong></p>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- MODAL FOR SET BOM INFO -->
+<!-- ============================================ -->
+<div id="modal-set-bom" class="hb-modal">
+    <div class="hb-modal-content">
+        <div class="hb-modal-header">
+            <h3>📋 Set Up A Bill of Material (BOM)</h3>
+            <span class="hb-modal-close">&times;</span>
+        </div>
+        <div class="hb-modal-body">
+            <p><strong>Set Up A Bill of Material (BOM)</strong></p>
+            <p>If this is an Assembly that you will be ordering again, to avoid re-building the hose assembly the next time, check the Set BOM box.</p>
+            <p>By checking the Set BOM box, that hose assembly will be setup as a Bill of Material specific to your account. The next time you want to order that hose, it can be found on the left hand side of the screen under Your Inventory.</p>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- MODAL FOR HOSE END ORIENTATION -->
+<!-- ============================================ -->
+<div id="modal-hose-orientation" class="hb-modal">
+    <div class="hb-modal-content">
+        <div class="hb-modal-header">
+            <h3>🔧 Hydraulic Hose Assembly Orientation</h3>
+            <span class="hb-modal-close">&times;</span>
+        </div>
+        <div class="hb-modal-body">
+            <p><strong>Hydraulic Hose Assembly Orientation</strong></p>
+            <p>For double elbow assemblies, it is critical for the orientation to be described how the two ends relate to each other. If the hose assembly is made and the orientation is not taken into account, the hose assembly will more than likely be difficult to install.</p>
+            <p>Look at the example below. There is a 90º hose end on one end of the hose and a 45º hose end on the other end of the hose.</p>
+            <p><em>Hose Assembly Orientation Example</em></p>
+            <p>Either end can be selected as the reference point. For this example, the 45º hose end is going to be the reference point. Position the reference point nearest you. Rotate that end straight up, like the large hand on a clock pointing at the 12. See the picture below.</p>
+            <p><em>Clocking the Hose Assembly</em></p>
+            <p>Now, as if you were looking at a clock, describe where the other end points as if it is the small hand on a clock. The example above would be at 5:00.</p>
+            <p>The description would be the 45º End is the reference point (or at 12) and the 90º is at 5:00.</p>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- MODAL FOR LENGTH INFO -->
+<!-- ============================================ -->
+<div id="modal-length-info" class="hb-modal">
+    <div class="hb-modal-content">
+        <div class="hb-modal-header">
+            <h3>📏 Measuring A Hose Length</h3>
+            <span class="hb-modal-close">&times;</span>
+        </div>
+        <div class="hb-modal-body">
+            <p><strong>Measuring A Hose Length</strong></p>
+            <p>When describing a hose, we always call out the length in inches. No matter how long the hose is. If it is a 2 foot (24 inch) assembly, a 5-1/2 foot (66 inch) assembly or a 100 foot (1200 inch) assembly, the inch value is what we are looking for. That includes calling out fraction of an inch by the fraction or the decimal equivalent. An example would be a 24-1/2 inch assembly is the same as a 24.5 inch assembly.</p>
+            
+            <p><strong>Two Critical Lengths</strong></p>
+            <p>There are two critical lengths to a hose assembly; the <strong>Overall Length (OAL)</strong> and the <strong>Cutoff Length (COL)</strong>. If you are buying a made up assembly, the overall length is all you have to be concerned with. If you are making a hose assembly, both lengths are a factor in making the hose assembly.</p>
+            <p><em>Hose Overall Length Verses Hose Cut Off Length</em></p>
+            
+            <p><strong>Measurement Standards</strong></p>
+            <p>Unless otherwise specified by the customer, the assembly's overall length is measured from the extreme of one hose end to the extreme end of the other hose end; except for O-Ring Face Seal Hose Ends. O-Ring Face Seal Hose Ends are measured from the sealing face. Where elbow Hose Ends are used, the measurement is the centerline of the sealing surface of the elbow hose end.</p>
+            
+            <p><strong>Hose Cut Length Calculation</strong></p>
+            <p>The hose cut length is calculated by subtracting each hose end's cut off factor. The cut off factor is the distance from the bottom of the ferrule or collar to the end of the fitting, dimension "C" in the diagram below.</p>
+            <p><em>Hose Coupling Length and Cut Off</em></p>
+            
+            <p><strong>Hose Length Tolerances</strong></p>
+            <p>When establishing proper hose length, motion absorption, hose length changes due to pressure, as well as hose and machine tolerances must be considered.</p>
+            
+            <p><strong>SAE and ISO Standards</strong></p>
+            <p>SAE is the standards organization which originated in the United States and is predominantly a North American organization while ISO originated in Europe. For hose assembly tolerance length, either standard may be referenced and used.</p>
+            <p><em>SAE and ISO Hydraulic Hose Length Tolerance</em></p>
+            
+            <p><small>© Copyright 2012 by the Association for Hose & Accessories Distribution, Inc.</small></p>
+        </div>
+    </div>
+</div>
+
+<style>
+/* ============================================ */
+/* MODAL STYLES */
+/* ============================================ */
+.hb-modal {
+    display: none;
+    position: fixed;
+    z-index: 999999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hb-modal-content {
+    background-color: #ffffff;
+    margin: 5% auto;
+    padding: 0;
+    width: 90%;
+    max-width: 650px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.hb-modal-header {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+    padding: 18px 24px;
+    border-radius: 16px 16px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hb-modal-header h3 {
+    margin: 0;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.hb-modal-close {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    line-height: 1;
+}
+
+.hb-modal-close:hover {
+    color: #fbbf24;
+    transform: scale(1.1);
+}
+
+.hb-modal-body {
+    padding: 24px;
+    max-height: 65vh;
+    overflow-y: auto;
+    line-height: 1.6;
+}
+
+.hb-modal-body p {
+    margin: 0 0 12px 0;
+    color: #374151;
+    font-size: 15px;
+}
+
+.hb-modal-body strong {
+    color: #1e3a8a;
+    font-weight: 600;
+}
+
+.hb-modal-body em {
+    color: #6b7280;
+    font-style: italic;
+    display: block;
+    margin: 8px 0;
+}
+
+.hb-modal-body small {
+    color: #9ca3af;
+    font-size: 11px;
+}
+
+/* Responsive modal for mobile */
+@media (max-width: 768px) {
+    .hb-modal-content {
+        width: 95%;
+        margin: 15% auto;
+    }
+    
+    .hb-modal-header h3 {
+        font-size: 18px;
+    }
+    
+    .hb-modal-body {
+        padding: 18px;
+        max-height: 70vh;
+    }
+    
+    .hb-modal-body p {
+        font-size: 14px;
+    }
+}
+
+/* More info link styling */
+.more-info-link {
+    font-size: 12px;
+    color: #3b82f6;
+    text-decoration: none;
+    margin-left: 6px;
+    cursor: pointer;
+}
+
+.more-info-link:hover {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+/* Modal body scrollbar styling */
+.hb-modal-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.hb-modal-body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.hb-modal-body::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 10px;
+}
+
+.hb-modal-body::-webkit-scrollbar-thumb:hover {
+    background: #2563eb;
+}
+
+/* Checkbox label styling with inline more info link */
+.checkbox-label {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.checkbox-label .more-info-link {
+    margin-left: 0;
+}
+</style>
+
 <script type="text/javascript">
 jQuery(document).ready(function($) {
     
@@ -195,6 +460,50 @@ jQuery(document).ready(function($) {
     if (!$('#hose-builder-wrapper').length) {
         return;
     }
+    
+    // ============================================
+    // MODAL FUNCTIONALITY
+    // ============================================
+    
+    // Get modal elements
+    var modals = {
+        'modal-part-number': $('#modal-part-number'),
+        'modal-set-bom': $('#modal-set-bom'),
+        'modal-hose-orientation': $('#modal-hose-orientation'),
+        'modal-length-info': $('#modal-length-info')
+    };
+    
+    // Open modal when clicking on more-info-link
+    $('.more-info-link').on('click', function(e) {
+        e.preventDefault();
+        var modalId = $(this).data('modal');
+        if (modalId && modals[modalId]) {
+            modals[modalId].fadeIn(300);
+            $('body').css('overflow', 'hidden');
+        }
+    });
+    
+    // Close modal when clicking on close button
+    $('.hb-modal-close').on('click', function() {
+        $(this).closest('.hb-modal').fadeOut(300);
+        $('body').css('overflow', 'auto');
+    });
+    
+    // Close modal when clicking outside the modal content
+    $(window).on('click', function(e) {
+        if ($(e.target).hasClass('hb-modal')) {
+            $(e.target).fadeOut(300);
+            $('body').css('overflow', 'auto');
+        }
+    });
+    
+    // Close modal with Escape key
+    $(document).on('keydown', function(e) {
+        if (e.key === 'Escape') {
+            $('.hb-modal').fadeOut(300);
+            $('body').css('overflow', 'auto');
+        }
+    });
     
     // ============================================
     // GLOBAL VARIABLES

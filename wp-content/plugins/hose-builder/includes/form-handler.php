@@ -237,3 +237,74 @@ add_action('wp_loaded', function() {
         }
     }
 });
+
+// Save assembly data when order is created
+add_action('woocommerce_checkout_create_order_line_item', 'hb_save_assembly_data_to_order_item', 10, 4);
+
+function hb_save_assembly_data_to_order_item($item, $cart_item_key, $values, $order) {
+    // Check if this cart item has assembly data
+    if (isset($values['hb_assembly_data']) && !empty($values['hb_assembly_data'])) {
+        $assembly_data = $values['hb_assembly_data'];
+        
+        // Save each field as order item meta
+        foreach ($assembly_data as $key => $value) {
+            if (!empty($value)) {
+                $item->add_meta_data('_hb_' . $key, $value);
+            }
+        }
+        
+        // Also save a flag to identify this is a hose assembly item
+        $item->add_meta_data('_hb_is_assembly_item', 'yes');
+        
+        // Save assembly group for grouping items
+        if (isset($values['hb_assembly_group'])) {
+            $item->add_meta_data('_hb_assembly_group', $values['hb_assembly_group']);
+        }
+        
+        // Save component type if applicable
+        if (isset($values['hb_assembly_component'])) {
+            $item->add_meta_data('_hb_component_type', $values['hb_assembly_component']);
+        }
+        
+        // Save main product flag
+        if (isset($values['hb_is_main'])) {
+            $item->add_meta_data('_hb_is_main', $values['hb_is_main']);
+        }
+    }
+}
+
+// Add to form-handler.php - Display in email
+add_action('woocommerce_email_before_order_table', 'hb_add_assembly_data_to_emails', 10, 4);
+function hb_add_assembly_data_to_emails($order, $sent_to_admin, $plain_text, $email) {
+    if ($plain_text) return;
+    
+    $has_assembly = false;
+    $assembly_items = array();
+    
+    foreach ($order->get_items() as $item) {
+        $is_assembly = $item->get_meta('_hb_is_assembly_item');
+        if ($is_assembly === 'yes') {
+            $has_assembly = true;
+            $assembly_items[] = $item;
+        }
+    }
+    
+    if (!$has_assembly) return;
+    ?>
+    <div style="margin: 20px 0; padding: 15px; background: #f0f9ff; border-left: 4px solid #3b82f6;">
+        <h3 style="margin: 0 0 10px 0;">🔧 Hose Assembly Specifications</h3>
+        <?php foreach ($assembly_items as $item): 
+            $your_part = $item->get_meta('_hb_your_part_number');
+            $instructions = $item->get_meta('_hb_instructions');
+            $length = $item->get_meta('_hb_length_value') . ' ' . $item->get_meta('_hb_length_unit');
+        ?>
+            <p style="margin: 5px 0;">
+                <strong>Product:</strong> <?php echo $item->get_name(); ?><br>
+                <?php if ($your_part): ?><strong>Part Number:</strong> <?php echo $your_part; ?><br><?php endif; ?>
+                <?php if ($length): ?><strong>Length:</strong> <?php echo $length; ?><br><?php endif; ?>
+                <?php if ($instructions): ?><strong>Instructions:</strong> <?php echo $instructions; ?><?php endif; ?>
+            </p>
+        <?php endforeach; ?>
+    </div>
+    <?php
+}
