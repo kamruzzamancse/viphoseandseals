@@ -122,112 +122,72 @@ function hb_custom_cart_footer_js() {
                 // ============================================
 
                 $(document).on('click', '#hb-update-all-btn', function(e) {
-                    e.preventDefault();
-                    console.log('Update button clicked - storing complete cart data');
-                    
-                    var assemblyData = [];
-                    
-                    // Find main product rows (those with assembly specs)
-                    $('.hb-assembly-specs-wrapper').each(function() {
-                        var $specsWrapper = $(this);
-                        var $row = $specsWrapper.closest('.wc-block-cart-items__row');
-                        
-                        console.log('Found assembly specs wrapper');
-                        
-                        // Extract data from assembly specs
-                        var partNumber = '';
-                        var setBOM = '';
-                        var instructions = '';
-                        var lengthText = '';
-                        var quantity = '';
-                        var department = '';
-                        var hoseType = '';
-                        var selectedProduct = '';
-                        var leftHoseEnd = '';
-                        var rightHoseEnd = '';
-                        
-                        // Get all assembly items
-                        $specsWrapper.find('.hb-assembly-item').each(function() {
-                            var text = $(this).text();
-                            if (text.indexOf('Your Part Number:') !== -1) {
-                                partNumber = text.replace('Your Part Number:', '').trim();
-                            }
-                            if (text.indexOf('Set BOM:') !== -1) {
-                                setBOM = text.replace('Set BOM:', '').trim();
-                            }
-                            if (text.indexOf('Instructions/Comments:') !== -1) {
-                                instructions = text.replace('Instructions/Comments:', '').trim();
-                            }
-                            if (text.indexOf('End to End Length:') !== -1) {
-                                lengthText = text.replace('End to End Length:', '').trim();
-                            }
-                            if (text.indexOf('Quantity:') !== -1) {
-                                quantity = text.replace('Quantity:', '').trim();
-                            }
-                            if (text.indexOf('Department:') !== -1) {
-                                department = text.replace('Department:', '').trim();
-                            }
-                            if (text.indexOf('Hose Type:') !== -1) {
-                                hoseType = text.replace('Hose Type:', '').trim();
-                            }
-                            if (text.indexOf('Selected Product:') !== -1) {
-                                selectedProduct = text.replace('Selected Product:', '').trim();
-                            }
-                            if (text.indexOf('Hose End (Left):') !== -1) {
-                                leftHoseEnd = text.replace('Hose End (Left):', '').trim();
-                            }
-                            if (text.indexOf('Hose End (Right):') !== -1) {
-                                rightHoseEnd = text.replace('Hose End (Right):', '').trim();
-                            }
-                        });
-                        
-                        // Get product ID from the product name link
-                        var productId = '';
-                        var productLink = $row.find('.wc-block-components-product-name').attr('href');
-                        if (productLink) {
-                            var match = productLink.match(/\/product\/([^\/]+)/);
-                            if (match) {
-                                productId = match[1];
-                            }
-                        }
-                        
-                        assemblyData.push({
-                            partNumber: partNumber,
-                            setBOM: setBOM,
-                            instructions: instructions,
-                            length: lengthText,
-                            quantity: quantity,
-                            department: department,
-                            hoseType: hoseType,
-                            selectedProduct: selectedProduct,
-                            leftHoseEnd: leftHoseEnd,
-                            rightHoseEnd: rightHoseEnd,
-                            productId: productId
-                        });
-                        
-                        console.log('Collected complete data:', {
-                            partNumber: partNumber,
-                            setBOM: setBOM,
-                            instructions: instructions,
-                            length: lengthText,
-                            quantity: quantity,
-                            department: department,
-                            hoseType: hoseType,
-                            selectedProduct: selectedProduct,
-                            leftHoseEnd: leftHoseEnd,
-                            rightHoseEnd: rightHoseEnd
-                        });
+                e.preventDefault();
+                console.log('Update button clicked - storing complete cart data');
+
+                var assemblyData = [];
+
+                // Collect assembly data as before
+                $('.hb-assembly-specs-wrapper').each(function() {
+                    var $specsWrapper = $(this);
+                    var $row = $specsWrapper.closest('.wc-block-cart-items__row');
+
+                    var partNumber = '', setBOM = '', instructions = '', lengthText = '', quantity = '',
+                        department = '', hoseType = '', selectedProduct = '', leftHoseEnd = '', rightHoseEnd = '';
+
+                    $specsWrapper.find('.hb-assembly-item').each(function() {
+                        var text = $(this).text();
+                        if (text.indexOf('Your Part Number:') !== -1) partNumber = text.replace('Your Part Number:', '').trim();
+                        if (text.indexOf('Set BOM:') !== -1) setBOM = text.replace('Set BOM:', '').trim();
+                        if (text.indexOf('Instructions/Comments:') !== -1) instructions = text.replace('Instructions/Comments:', '').trim();
+                        if (text.indexOf('End to End Length:') !== -1) lengthText = text.replace('End to End Length:', '').trim();
+                        if (text.indexOf('Quantity:') !== -1) quantity = text.replace('Quantity:', '').trim();
+                        if (text.indexOf('Department:') !== -1) department = text.replace('Department:', '').trim();
+                        if (text.indexOf('Hose Type:') !== -1) hoseType = text.replace('Hose Type:', '').trim();
+                        if (text.indexOf('Selected Product:') !== -1) selectedProduct = text.replace('Selected Product:', '').trim();
+                        if (text.indexOf('Hose End (Left):') !== -1) leftHoseEnd = text.replace('Hose End (Left):', '').trim();
+                        if (text.indexOf('Hose End (Right):') !== -1) rightHoseEnd = text.replace('Hose End (Right):', '').trim();
                     });
-                    
-                    if (assemblyData.length > 0) {
-                        localStorage.setItem('hb_edit_assembly', JSON.stringify(assemblyData));
-                        console.log('Complete assembly data stored in localStorage:', assemblyData);
-                        window.location.href = '/viphoseandseals/build-a-hose/?edit=true';
-                    } else {
-                        console.log('No assembly specs found');
-                        alert('No assembly data found to edit. Please add items to cart first.');
+
+                    // Product ID from link
+                    var productId = '';
+                    var productLink = $row.find('.wc-block-components-product-name').attr('href');
+                    if (productLink) {
+                        var match = productLink.match(/\/product\/([^\/]+)/);
+                        if (match) productId = match[1];
                     }
+
+                    assemblyData.push({
+                        partNumber, setBOM, instructions, length: lengthText, quantity, department,
+                        hoseType, selectedProduct, leftHoseEnd, rightHoseEnd, productId
+                    });
                 });
+
+                if (assemblyData.length > 0) {
+                    // First, clear the cart via AJAX
+                    $.ajax({
+                        url: '<?php echo admin_url("admin-ajax.php"); ?>',
+                        type: 'POST',
+                        data: { action: 'hb_clear_cart', nonce: hbAjaxNonce },
+                        success: function(response) {
+                            if (response.success) {
+                                console.log('Cart cleared successfully before update');
+                                // Store assembly data in localStorage
+                                localStorage.setItem('hb_edit_assembly', JSON.stringify(assemblyData));
+                                // Redirect to build-a-hose page
+                                window.location.href = '/viphoseandseals/build-a-hose/?edit=true';
+                            } else {
+                                alert('Failed to clear cart before update. Try again.');
+                            }
+                        },
+                        error: function() {
+                            alert('Failed to clear cart before update. Try again.');
+                        }
+                    });
+                } else {
+                    alert('No assembly data found to edit. Please add items to cart first.');
+                }
+            });
                 
                 // ============================================
                 // HANDLE DELETE BUTTON CLICK

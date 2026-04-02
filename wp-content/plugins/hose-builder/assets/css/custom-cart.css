@@ -817,10 +817,6 @@ body:not(.woocommerce-block-theme-has-button-styles) .wc-block-components-button
     border-radius: 0 !important;
 }
 
-.elementor-menu-cart__main {
-    width: 550px !important;
-}
-
 /* ============================================ */
 /* Side Cart / Drawer Styling */
 /* ============================================ */
@@ -831,7 +827,7 @@ body:not(.woocommerce-block-theme-has-button-styles) .wc-block-components-button
 }
 
 .elementor-menu-cart__main {
-    width: 450px !important;
+    width: 550px !important;
     max-width: 90vw;
     background: #ffffff !important;
     border-left: 1px solid #e5e7eb !important;
