@@ -811,3 +811,7 @@
     display: none !important;
     content: none !important;
 }
+
+.woocommerce-order {
+    margin-top: 50px;
+}

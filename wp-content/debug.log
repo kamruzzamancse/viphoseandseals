@@ -1,0 +1,146 @@
+[05-Apr-2026 11:11:02 UTC] PHP Warning:  Attempt to read property "post_content" on null in C:\xampp\htdocs\viphoseandseals\wp-content\themes\hello-elementor-child\functions.php on line 424
+[06-Apr-2026 02:23:42 UTC] Automatic updates starting...
+[06-Apr-2026 02:23:43 UTC]   Automatic plugin updates starting...
+[06-Apr-2026 02:23:43 UTC]   Automatic plugin updates complete.
+[06-Apr-2026 02:23:44 UTC]   Automatic theme updates starting...
+[06-Apr-2026 02:23:44 UTC]   Automatic theme updates complete.
+[06-Apr-2026 02:23:44 UTC] Automatic updates complete.
+[06-Apr-2026 03:21:32 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function ACF_Admin_Field_Groups::get_admin_table_post_classes(), 2 passed in C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php on line 324 and exactly 3 expected in C:\xampp\htdocs\viphoseandseals\wp-content\plugins\advanced-custom-fields\includes\admin\post-types\admin-field-groups.php:287
+Stack trace:
+#0 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(324): ACF_Admin_Field_Groups->get_admin_table_post_classes(Array, 1160)
+#1 C:\xampp\htdocs\viphoseandseals\wp-includes\plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 C:\xampp\htdocs\viphoseandseals\wp-content\themes\hello-elementor-child\functions.php(428): apply_filters('post_class', Array, 1160)
+#3 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(324): filter_seals_products_callback('')
+#4 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#5 C:\xampp\htdocs\viphoseandseals\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 C:\xampp\htdocs\viphoseandseals\wp-admin\admin-ajax.php(192): do_action('wp_ajax_filter_...')
+#7 {main}
+  thrown in C:\xampp\htdocs\viphoseandseals\wp-content\plugins\advanced-custom-fields\includes\admin\post-types\admin-field-groups.php on line 287
+[06-Apr-2026 03:21:40 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function ACF_Admin_Field_Groups::get_admin_table_post_classes(), 2 passed in C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php on line 324 and exactly 3 expected in C:\xampp\htdocs\viphoseandseals\wp-content\plugins\advanced-custom-fields\includes\admin\post-types\admin-field-groups.php:287
+Stack trace:
+#0 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(324): ACF_Admin_Field_Groups->get_admin_table_post_classes(Array, 1160)
+#1 C:\xampp\htdocs\viphoseandseals\wp-includes\plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 C:\xampp\htdocs\viphoseandseals\wp-content\themes\hello-elementor-child\functions.php(428): apply_filters('post_class', Array, 1160)
+#3 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(324): filter_seals_products_callback('')
+#4 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#5 C:\xampp\htdocs\viphoseandseals\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 C:\xampp\htdocs\viphoseandseals\wp-admin\admin-ajax.php(192): do_action('wp_ajax_filter_...')
+#7 {main}
+  thrown in C:\xampp\htdocs\viphoseandseals\wp-content\plugins\advanced-custom-fields\includes\admin\post-types\admin-field-groups.php on line 287
+[06-Apr-2026 03:24:35 UTC] Cron reschedule event error for hook: action_scheduler_run_queue, Error code: could_not_set, Error message: The cron event list could not be saved., Data: {"schedule":"every_minute","args":["WP Cron"],"interval":60}
+[06-Apr-2026 03:34:03 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function ACF_Admin_Field_Groups::get_admin_table_post_classes(), 2 passed in C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php on line 324 and exactly 3 expected in C:\xampp\htdocs\viphoseandseals\wp-content\plugins\advanced-custom-fields\includes\admin\post-types\admin-field-groups.php:287
+Stack trace:
+#0 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(324): ACF_Admin_Field_Groups->get_admin_table_post_classes(Array, 1160)
+#1 C:\xampp\htdocs\viphoseandseals\wp-includes\plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 C:\xampp\htdocs\viphoseandseals\wp-content\themes\hello-elementor-child\functions.php(440): apply_filters('post_class', Array, 1160)
+#3 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(324): filter_seals_products_callback('')
+#4 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#5 C:\xampp\htdocs\viphoseandseals\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 C:\xampp\htdocs\viphoseandseals\wp-admin\admin-ajax.php(192): do_action('wp_ajax_filter_...')
+#7 {main}
+  thrown in C:\xampp\htdocs\viphoseandseals\wp-content\plugins\advanced-custom-fields\includes\admin\post-types\admin-field-groups.php on line 287
+[06-Apr-2026 03:34:09 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function ACF_Admin_Field_Groups::get_admin_table_post_classes(), 2 passed in C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php on line 324 and exactly 3 expected in C:\xampp\htdocs\viphoseandseals\wp-content\plugins\advanced-custom-fields\includes\admin\post-types\admin-field-groups.php:287
+Stack trace:
+#0 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(324): ACF_Admin_Field_Groups->get_admin_table_post_classes(Array, 1160)
+#1 C:\xampp\htdocs\viphoseandseals\wp-includes\plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 C:\xampp\htdocs\viphoseandseals\wp-content\themes\hello-elementor-child\functions.php(440): apply_filters('post_class', Array, 1160)
+#3 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(324): filter_seals_products_callback('')
+#4 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#5 C:\xampp\htdocs\viphoseandseals\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 C:\xampp\htdocs\viphoseandseals\wp-admin\admin-ajax.php(192): do_action('wp_ajax_filter_...')
+#7 {main}
+  thrown in C:\xampp\htdocs\viphoseandseals\wp-content\plugins\advanced-custom-fields\includes\admin\post-types\admin-field-groups.php on line 287
+[06-Apr-2026 03:34:10 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function ACF_Admin_Field_Groups::get_admin_table_post_classes(), 2 passed in C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php on line 324 and exactly 3 expected in C:\xampp\htdocs\viphoseandseals\wp-content\plugins\advanced-custom-fields\includes\admin\post-types\admin-field-groups.php:287
+Stack trace:
+#0 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(324): ACF_Admin_Field_Groups->get_admin_table_post_classes(Array, 1160)
+#1 C:\xampp\htdocs\viphoseandseals\wp-includes\plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 C:\xampp\htdocs\viphoseandseals\wp-content\themes\hello-elementor-child\functions.php(440): apply_filters('post_class', Array, 1160)
+#3 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(324): filter_seals_products_callback('')
+#4 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#5 C:\xampp\htdocs\viphoseandseals\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 C:\xampp\htdocs\viphoseandseals\wp-admin\admin-ajax.php(192): do_action('wp_ajax_filter_...')
+#7 {main}
+  thrown in C:\xampp\htdocs\viphoseandseals\wp-content\plugins\advanced-custom-fields\includes\admin\post-types\admin-field-groups.php on line 287
+[06-Apr-2026 03:34:16 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function ACF_Admin_Field_Groups::get_admin_table_post_classes(), 2 passed in C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php on line 324 and exactly 3 expected in C:\xampp\htdocs\viphoseandseals\wp-content\plugins\advanced-custom-fields\includes\admin\post-types\admin-field-groups.php:287
+Stack trace:
+#0 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(324): ACF_Admin_Field_Groups->get_admin_table_post_classes(Array, 1160)
+#1 C:\xampp\htdocs\viphoseandseals\wp-includes\plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 C:\xampp\htdocs\viphoseandseals\wp-content\themes\hello-elementor-child\functions.php(440): apply_filters('post_class', Array, 1160)
+#3 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(324): filter_seals_products_callback('')
+#4 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#5 C:\xampp\htdocs\viphoseandseals\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 C:\xampp\htdocs\viphoseandseals\wp-admin\admin-ajax.php(192): do_action('wp_ajax_filter_...')
+#7 {main}
+  thrown in C:\xampp\htdocs\viphoseandseals\wp-content\plugins\advanced-custom-fields\includes\admin\post-types\admin-field-groups.php on line 287
+[06-Apr-2026 03:34:21 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function ACF_Admin_Field_Groups::get_admin_table_post_classes(), 2 passed in C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php on line 324 and exactly 3 expected in C:\xampp\htdocs\viphoseandseals\wp-content\plugins\advanced-custom-fields\includes\admin\post-types\admin-field-groups.php:287
+Stack trace:
+#0 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(324): ACF_Admin_Field_Groups->get_admin_table_post_classes(Array, 1160)
+#1 C:\xampp\htdocs\viphoseandseals\wp-includes\plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 C:\xampp\htdocs\viphoseandseals\wp-content\themes\hello-elementor-child\functions.php(440): apply_filters('post_class', Array, 1160)
+#3 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(324): filter_seals_products_callback('')
+#4 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#5 C:\xampp\htdocs\viphoseandseals\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 C:\xampp\htdocs\viphoseandseals\wp-admin\admin-ajax.php(192): do_action('wp_ajax_filter_...')
+#7 {main}
+  thrown in C:\xampp\htdocs\viphoseandseals\wp-content\plugins\advanced-custom-fields\includes\admin\post-types\admin-field-groups.php on line 287
+[06-Apr-2026 03:39:52 UTC] Automatic updates starting...
+[06-Apr-2026 03:39:53 UTC]   Automatic plugin updates starting...
+[06-Apr-2026 03:39:53 UTC]   Automatic plugin updates complete.
+[06-Apr-2026 03:39:53 UTC]   Automatic theme updates starting...
+[06-Apr-2026 03:39:53 UTC]   Automatic theme updates complete.
+[06-Apr-2026 03:39:53 UTC] Automatic updates complete.
+[06-Apr-2026 03:43:43 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function ACF_Admin_Field_Groups::get_admin_table_post_classes(), 2 passed in C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php on line 324 and exactly 3 expected in C:\xampp\htdocs\viphoseandseals\wp-content\plugins\advanced-custom-fields\includes\admin\post-types\admin-field-groups.php:287
+Stack trace:
+#0 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(324): ACF_Admin_Field_Groups->get_admin_table_post_classes(Array, 1160)
+#1 C:\xampp\htdocs\viphoseandseals\wp-includes\plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 C:\xampp\htdocs\viphoseandseals\wp-content\themes\hello-elementor-child\functions.php(437): apply_filters('post_class', Array, 1160)
+#3 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(324): filter_seals_products_callback('')
+#4 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#5 C:\xampp\htdocs\viphoseandseals\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 C:\xampp\htdocs\viphoseandseals\wp-admin\admin-ajax.php(192): do_action('wp_ajax_filter_...')
+#7 {main}
+  thrown in C:\xampp\htdocs\viphoseandseals\wp-content\plugins\advanced-custom-fields\includes\admin\post-types\admin-field-groups.php on line 287
+[06-Apr-2026 03:43:59 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function ACF_Admin_Field_Groups::get_admin_table_post_classes(), 2 passed in C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php on line 324 and exactly 3 expected in C:\xampp\htdocs\viphoseandseals\wp-content\plugins\advanced-custom-fields\includes\admin\post-types\admin-field-groups.php:287
+Stack trace:
+#0 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(324): ACF_Admin_Field_Groups->get_admin_table_post_classes(Array, 1160)
+#1 C:\xampp\htdocs\viphoseandseals\wp-includes\plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 C:\xampp\htdocs\viphoseandseals\wp-content\themes\hello-elementor-child\functions.php(437): apply_filters('post_class', Array, 1160)
+#3 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(324): filter_seals_products_callback('')
+#4 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#5 C:\xampp\htdocs\viphoseandseals\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 C:\xampp\htdocs\viphoseandseals\wp-admin\admin-ajax.php(192): do_action('wp_ajax_filter_...')
+#7 {main}
+  thrown in C:\xampp\htdocs\viphoseandseals\wp-content\plugins\advanced-custom-fields\includes\admin\post-types\admin-field-groups.php on line 287
+[06-Apr-2026 03:44:01 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function ACF_Admin_Field_Groups::get_admin_table_post_classes(), 2 passed in C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php on line 324 and exactly 3 expected in C:\xampp\htdocs\viphoseandseals\wp-content\plugins\advanced-custom-fields\includes\admin\post-types\admin-field-groups.php:287
+Stack trace:
+#0 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(324): ACF_Admin_Field_Groups->get_admin_table_post_classes(Array, 1160)
+#1 C:\xampp\htdocs\viphoseandseals\wp-includes\plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 C:\xampp\htdocs\viphoseandseals\wp-content\themes\hello-elementor-child\functions.php(437): apply_filters('post_class', Array, 1160)
+#3 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(324): filter_seals_products_callback('')
+#4 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#5 C:\xampp\htdocs\viphoseandseals\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 C:\xampp\htdocs\viphoseandseals\wp-admin\admin-ajax.php(192): do_action('wp_ajax_filter_...')
+#7 {main}
+  thrown in C:\xampp\htdocs\viphoseandseals\wp-content\plugins\advanced-custom-fields\includes\admin\post-types\admin-field-groups.php on line 287
+[06-Apr-2026 03:44:08 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function ACF_Admin_Field_Groups::get_admin_table_post_classes(), 2 passed in C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php on line 324 and exactly 3 expected in C:\xampp\htdocs\viphoseandseals\wp-content\plugins\advanced-custom-fields\includes\admin\post-types\admin-field-groups.php:287
+Stack trace:
+#0 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(324): ACF_Admin_Field_Groups->get_admin_table_post_classes(Array, 1160)
+#1 C:\xampp\htdocs\viphoseandseals\wp-includes\plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 C:\xampp\htdocs\viphoseandseals\wp-content\themes\hello-elementor-child\functions.php(437): apply_filters('post_class', Array, 1160)
+#3 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(324): filter_seals_products_callback('')
+#4 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#5 C:\xampp\htdocs\viphoseandseals\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 C:\xampp\htdocs\viphoseandseals\wp-admin\admin-ajax.php(192): do_action('wp_ajax_filter_...')
+#7 {main}
+  thrown in C:\xampp\htdocs\viphoseandseals\wp-content\plugins\advanced-custom-fields\includes\admin\post-types\admin-field-groups.php on line 287
+[06-Apr-2026 03:44:11 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function ACF_Admin_Field_Groups::get_admin_table_post_classes(), 2 passed in C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php on line 324 and exactly 3 expected in C:\xampp\htdocs\viphoseandseals\wp-content\plugins\advanced-custom-fields\includes\admin\post-types\admin-field-groups.php:287
+Stack trace:
+#0 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(324): ACF_Admin_Field_Groups->get_admin_table_post_classes(Array, 1160)
+#1 C:\xampp\htdocs\viphoseandseals\wp-includes\plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 C:\xampp\htdocs\viphoseandseals\wp-content\themes\hello-elementor-child\functions.php(437): apply_filters('post_class', Array, 1160)
+#3 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(324): filter_seals_products_callback('')
+#4 C:\xampp\htdocs\viphoseandseals\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#5 C:\xampp\htdocs\viphoseandseals\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 C:\xampp\htdocs\viphoseandseals\wp-admin\admin-ajax.php(192): do_action('wp_ajax_filter_...')
+#7 {main}
+  thrown in C:\xampp\htdocs\viphoseandseals\wp-content\plugins\advanced-custom-fields\includes\admin\post-types\admin-field-groups.php on line 287

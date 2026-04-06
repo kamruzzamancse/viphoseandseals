@@ -3,5 +3,647 @@
  * Author:         Elementor Team
  * Template:       hello-elementor
  * Text Domain:	   hello-elementor-child
- * Description:    Hello Elementor is a lightweight and minimalist WordPress theme that was built specifically to work seamlessly with the Elementor site builder plugin. The theme is free, open-source, and designed for users who want a flexible, easy-to-use, and customizable website. The theme, which is optimized for performance, provides a solid foundation for users to build their own unique designs using the Elementor drag-and-drop site builder. Its simplicity and flexibility make it a great choice for both beginners and experienced Web Creators.
+ * Description:    Hello Elementor Child Theme
  */
+
+/**
+ * SEALS BY SIZE FILTER STYLES
+ * Same border design for all fields (Measurement, Type, ID, OD, HT)
+ * Fully responsive for Desktop, Tablet & Mobile
+ */
+
+.seals-filter {
+    background: #f5f5f5;
+    padding: 15px 20px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.seals-filter-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.seals-filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+/* ============================================
+   COMMON STYLES FOR ALL FIELDS
+   (Measurement, Type, ID, OD, HT)
+   ============================================ */
+
+.seals-filter-field {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 8px;
+    position: relative;
+    border: 1px solid #CCCCCC;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background: #fff;
+}
+
+/* Label style for ALL fields - appears ABOVE the border */
+.seals-filter-field > label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #222;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: #fff;
+    display: inline-block;
+    width: auto;
+    padding: 0 6px;
+    position: absolute;
+    top: -10px;
+    left: 12px;
+    z-index: 1;
+}
+
+/* Select dropdown for Measurement and Type */
+.seals-select {
+    padding: 6px 10px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 12px;
+    min-width: 110px;
+    cursor: pointer;
+    height: 30px;
+    width: 100%;
+}
+
+/* Combo box container for ID, OD, HT */
+.seals-filter-field .seals-combo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    width: 100%;
+}
+
+/* Input wrapper */
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Dropdown wrapper */
+.dropdown-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Tol label - above dropdown */
+.dropdown-wrapper label {
+    font-size: 10px;
+    font-weight: 600;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
+/* Input field for ID, OD, HT - TEXT input style */
+.seals-input {
+    padding: 4px 6px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    font-size: 12px;
+    width: 100px;
+    height: 30px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.seals-input:focus {
+    outline: none;
+    border-color: #007cba;
+    box-shadow: 0 0 0 1px #007cba;
+}
+
+/* Tolerance dropdown for ID, OD, HT */
+.seals-tol-select {
+    padding: 4px 6px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 11px;
+    cursor: pointer;
+    min-width: 55px;
+    height: 30px;
+    box-sizing: border-box;
+    font-weight: 500;
+}
+
+.seals-tol-select:hover {
+    background: #f9f9f9;
+}
+
+/* Filter loader */
+.filter-loader {
+    text-align: center;
+    padding: 50px;
+    background: #f5f5f5;
+}
+
+/* Product Specifications Table */
+.acf-product-details {
+    margin: 20px 0;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+.acf-product-details h3 {
+    padding: 15px 20px;
+    margin: 0;
+    background: #f5f5f5;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 18px;
+}
+
+.product-specs-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.product-specs-table th,
+.product-specs-table td {
+    padding: 12px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.product-specs-table th {
+    width: 35%;
+    background: #fafafa;
+    font-weight: 600;
+}
+
+/* WooCommerce Pagination */
+.woocommerce-pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.woocommerce-pagination .page-numbers {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 2px;
+    border: 1px solid #ddd;
+    background: #fff;
+    text-decoration: none;
+}
+
+.woocommerce-pagination .page-numbers.current {
+    background: #007cba;
+    color: #fff;
+    border-color: #007cba;
+}
+
+/* Hide categories on Seals Shop page */
+.page-id-YOUR_PAGE_ID ul.products li.product-category,
+.postid-YOUR_PAGE_ID ul.products li.product-category {
+    display: none !important;
+}
+
+/* ============================================
+   TABLET VIEW (768px to 1024px)
+   ============================================ */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .seals-filter-row {
+        gap: 15px;
+    }
+    
+    .seals-select {
+        min-width: 90px;
+        font-size: 11px;
+    }
+    
+    .seals-filter-field {
+        padding: 8px 10px;
+    }
+    
+    .seals-filter-field > label {
+        font-size: 10px;
+        top: -9px;
+        left: 10px;
+    }
+    
+    .seals-input {
+        width: 80px;
+        font-size: 11px;
+    }
+    
+    .seals-tol-select {
+        min-width: 50px;
+        font-size: 10px;
+    }
+    
+    .dropdown-wrapper label {
+        font-size: 9px;
+    }
+}
+
+/* ============================================
+   MOBILE VIEW (up to 768px)
+   ============================================ */
+
+@media (max-width: 768px) {
+    .seals-filter {
+        padding: 12px 15px;
+    }
+    
+    .seals-filter-title {
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+    
+    .seals-filter-row {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+    }
+    
+    /* ALL fields full width on mobile */
+    .seals-filter-field {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 12px 15px;
+        box-sizing: border-box;
+    }
+    
+    /* Label positioning fix for mobile */
+    .seals-filter-field > label {
+        position: static;
+        background: transparent;
+        padding: 0;
+        margin-bottom: 8px;
+        font-size: 12px;
+        display: block;
+    }
+    
+    /* Select full width on mobile */
+    .seals-select {
+        width: 100%;
+        min-width: unset;
+        padding: 8px 12px;
+        height: 36px;
+        font-size: 13px;
+    }
+    
+    /* Combo box full width */
+    .seals-filter-field .seals-combo {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 15px;
+        width: 100%;
+    }
+    
+    /* Input wrapper takes remaining space */
+    .input-wrapper {
+        flex: 2;
+    }
+    
+    /* Dropdown wrapper */
+    .dropdown-wrapper {
+        flex: 1;
+    }
+    
+    /* Tol label fix */
+    .dropdown-wrapper label {
+        font-size: 11px;
+        margin-bottom: 4px;
+    }
+    
+    /* Input full width */
+    .seals-input {
+        width: 100% !important;
+        height: 36px;
+        font-size: 13px;
+        padding: 6px 8px;
+        text-align: left;
+    }
+    
+    /* Dropdown full width */
+    .seals-tol-select {
+        width: 100%;
+        min-width: unset;
+        height: 36px;
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+}
+
+/* ============================================
+   SMALL MOBILE VIEW (up to 480px)
+   ============================================ */
+
+@media (max-width: 480px) {
+    .seals-filter {
+        padding: 10px 12px;
+    }
+    
+    .seals-filter-title {
+        font-size: 12px;
+        margin-bottom: 15px;
+    }
+    
+    .seals-filter-row {
+        gap: 15px;
+    }
+    
+    .seals-filter-field .seals-combo {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .input-wrapper,
+    .dropdown-wrapper {
+        width: 100%;
+    }
+    
+    .dropdown-wrapper label {
+        margin-bottom: 3px;
+    }
+    
+    .seals-input,
+    .seals-tol-select {
+        width: 100% !important;
+        height: 38px;
+    }
+    
+    /* Product specs table responsive */
+    .product-specs-table th,
+    .product-specs-table td {
+        padding: 8px 10px;
+        font-size: 11px;
+        display: block;
+        width: 100%;
+    }
+    
+    .product-specs-table tr {
+        display: block;
+        margin-bottom: 10px;
+        border: 1px solid #eee;
+    }
+    
+    /* Pagination responsive */
+    .woocommerce-pagination .page-numbers {
+        padding: 5px 8px;
+        font-size: 11px;
+        margin: 0 1px;
+    }
+}
+
+/* Force product grid layout */
+.woocommerce ul.products,
+.woocommerce-page ul.products {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 30px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product {
+    float: none !important;
+    width: calc(25% - 22.5px) !important; /* 4 columns */
+    margin: 0 !important;
+    clear: none !important;
+}
+
+/* 3 columns for tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .woocommerce ul.products li.product,
+    .woocommerce-page ul.products li.product {
+        width: calc(33.33% - 20px) !important;
+    }
+}
+
+/* 2 columns for mobile */
+@media (max-width: 768px) {
+    .woocommerce ul.products li.product,
+    .woocommerce-page ul.products li.product {
+        width: calc(50% - 15px) !important;
+    }
+}
+
+/* 1 column for small mobile */
+@media (max-width: 480px) {
+    .woocommerce ul.products li.product,
+    .woocommerce-page ul.products li.product {
+        width: 100% !important;
+    }
+}
+
+/* Product card styling */
+.woocommerce ul.products li.product {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.woocommerce ul.products li.product:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+.woocommerce ul.products li.product img {
+    margin-bottom: 15px;
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+    font-size: 16px;
+    margin: 10px 0;
+    padding: 0;
+}
+
+.woocommerce ul.products li.product .price {
+    color: #007cba;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.woocommerce ul.products li.product .button {
+    background: #007cba;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 12px;
+    padding: 8px 15px;
+}
+
+.woocommerce ul.products li.product .button:hover {
+    background: #005a87;
+}
+
+/* ============================================
+   4 COLUMN PRODUCT GRID - FINAL VERSION
+   ============================================ */
+
+/* Desktop: 4 columns */
+.woocommerce ul.products,
+.woocommerce-page ul.products,
+.woocommerce.columns-4 ul.products {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 30px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product,
+.woocommerce.columns-4 ul.products li.product {
+    float: none !important;
+    width: calc(25% - 22.5px) !important; /* 4 columns */
+    margin: 0 !important;
+    margin-bottom: 30px !important;
+    clear: none !important;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    list-style: none;
+}
+
+.woocommerce ul.products li.product:hover,
+.woocommerce-page ul.products li.product:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+.woocommerce ul.products li.product img,
+.woocommerce-page ul.products li.product img {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-product__title,
+.woocommerce-page ul.products li.product .woocommerce-loop-product__title {
+    font-size: 16px;
+    margin: 10px 0;
+    padding: 0;
+}
+
+.woocommerce ul.products li.product .price,
+.woocommerce-page ul.products li.product .price {
+    color: #007cba;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.woocommerce ul.products li.product .button,
+.woocommerce-page ul.products li.product .button {
+    background: #007cba;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 12px;
+    padding: 8px 15px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.woocommerce ul.products li.product .button:hover,
+.woocommerce-page ul.products li.product .button:hover {
+    background: #005a87;
+    color: #fff;
+}
+
+/* Tablet: 3 columns */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .woocommerce ul.products li.product,
+    .woocommerce-page ul.products li.product,
+    .woocommerce.columns-4 ul.products li.product {
+        width: calc(33.33% - 20px) !important; /* 3 columns */
+    }
+}
+
+/* Mobile: 2 columns */
+@media (max-width: 768px) {
+    .woocommerce ul.products li.product,
+    .woocommerce-page ul.products li.product,
+    .woocommerce.columns-4 ul.products li.product {
+        width: calc(50% - 15px) !important; /* 2 columns */
+    }
+}
+
+/* Small Mobile: 1 column */
+@media (max-width: 480px) {
+    .woocommerce ul.products li.product,
+    .woocommerce-page ul.products li.product,
+    .woocommerce.columns-4 ul.products li.product {
+        width: 100% !important; /* 1 column */
+    }
+}
+
+/* Pagination styling */
+.woocommerce-pagination {
+    margin-top: 30px;
+    text-align: center;
+    clear: both;
+}
+
+.woocommerce-pagination .page-numbers {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 2px;
+    border: 1px solid #ddd;
+    background: #fff;
+    text-decoration: none;
+    color: #333;
+}
+
+.woocommerce-pagination .page-numbers.current {
+    background: #007cba;
+    color: #fff;
+    border-color: #007cba;
+}
+
+.woocommerce-pagination .page-numbers:hover {
+    background: #f5f5f5;
+}
+
+/* Filter loader */
+.filter-loader {
+    text-align: center;
+    padding: 50px;
+    background: #f5f5f5;
+}
+
+.seals-products-wrapper ul.products {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 30px !important;
+}
+
+.seals-products-wrapper ul.products li.product {
+    width: calc(25% - 22.5px) !important;
+}
